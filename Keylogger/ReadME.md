@@ -45,3 +45,6 @@ Use pip install ""
 | `cryptography.fernet`       | Symmetric encryption of data or logs     |
 | `requests`                  | Send HTTP requests (e.g., IP tracker)    |
 | `PIL.ImageGrab`             | Capture screenshots (part of Pillow)     |
+
+
+By default google blocks the s.login() function through python for security reasons, so inorder to login you do not use your actual password instead you must generate an app password after turning on 2 step verification where google will provide you a 16 letter randomised password, it is also recommended to use a disposable email account.
