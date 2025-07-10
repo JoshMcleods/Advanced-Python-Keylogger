@@ -1,0 +1,6 @@
+Public IP Address: ##redacted##
+Processor: ##redacted##
+System: ##redacted##
+Machine: ##redacted##
+Hostname: ##redacted##
+Private IP Address: ##redacted##

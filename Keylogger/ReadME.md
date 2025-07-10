@@ -48,3 +48,6 @@ Use pip install ""
 
 
 By default google blocks the s.login() function through python for security reasons, so inorder to login you do not use your actual password instead you must generate an app password after turning on 2 step verification where google will provide you a 16 letter randomised password, it is also recommended to use a disposable email account.
+
+Getting the public ip address using ipify.org has a max query per user, after the max query is reached an exception will occur saying it could not retreive the Public IP addresss.
+
