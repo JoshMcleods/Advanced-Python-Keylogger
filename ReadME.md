@@ -53,3 +53,4 @@ Getting the public ip address using ipify.org has a max query per user, after th
 
 For the audio capture, channel 2 is a common default although if it does not capture audio input it could be due to the wrong input capture, so adding the d.default.device = (2, None) line can fix channel errors. Otherwise, the audio channels are printed to system info.txt and you can decide which audio device to capture from. If you would like to capture a longer .wav audio file changing the seconds is optional.
 
+If you do not encrypt the files before sending them your message will be automatically blocked by google as they present potential security issues.
