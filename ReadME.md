@@ -51,5 +51,5 @@ By default google blocks the s.login() function through python for security reas
 
 Getting the public ip address using ipify.org has a max query per user, after the max query is reached an exception will occur saying it could not retreive the Public IP addresss.
 
-For the audio capture, channel 2 is a common default although if it does not capture audio input it could be due to the wrong input capture, so adding the d.default.device = (2, None) line can fix channel errors. If you would like to capture a longer .wav audio file changing the seconds is optional.
+For the audio capture, channel 2 is a common default although if it does not capture audio input it could be due to the wrong input capture, so adding the d.default.device = (2, None) line can fix channel errors. Otherwise, the audio channels are printed to system info.txt and you can decide which audio device to capture from. If you would like to capture a longer .wav audio file changing the seconds is optional.
 

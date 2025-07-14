@@ -4,3 +4,9 @@ System: ##redacted##
 Machine: ##redacted##
 Hostname: ##redacted##
 Private IP Address: ##redacted##
+Available audio devices:
+1. ##redacted##
+2. ##redacted##
+3. ##redacted##
+4. ##redacted##
+5. ##redacted##
