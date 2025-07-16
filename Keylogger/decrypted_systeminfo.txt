@@ -1,0 +1,10 @@
+Public IP Address: ##redacted##
+Processor: ##redacted##
+System: ##redacted##
+Machine: ##redacted##
+Hostname: ##redacted##
+Private IP Address: ##redacted##
+Available audio devices:
+0: ##redacted##
+1: ##redacted##
+2: ##redacted##
